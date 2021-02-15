@@ -1,20 +1,4 @@
 const main = document.querySelector("main");
-function crearePixeli(linii, coloane) {
-  for (let i = 0; i < linii; i++) {
-    const linie = document.createElement("span");
-    linie.classList.add("linie");
-    for (let j = 0; j < coloane; j++) {
-      const pixel = document.createElement("div");
-      pixel.classList.add("pixel");
-
-      pixel.addEventListener("mouseover", () => {
-        pixel.style.backgroundColor = alegereCuloare();
-      });
-      linie.appendChild(pixel);
-    }
-    main.appendChild(linie);
-  }
-}
 function alegereCuloare() {
   let color =
     "rgb(" +
@@ -27,4 +11,18 @@ function alegereCuloare() {
 
   return color;
 }
-crearePixeli(23, 23);
+function crearePixeli(linii, coloane) {
+  main.style.gridTemplateRows = `repeat(${linii}, 1fr)`;
+  main.style.gridTemplateColumns = `repeat(${coloane}, 1fr)`;
+  for (let j = 0; j < coloane * linii; j++) {
+    const pixel = document.createElement("div");
+    pixel.classList.add("pixel");
+    pixel.style.width = 1 + "fr";
+    pixel.addEventListener("mouseover", () => {
+      pixel.style.backgroundColor = alegereCuloare();
+    });
+    main.appendChild(pixel);
+  }
+}
+
+crearePixeli(64, 64);
