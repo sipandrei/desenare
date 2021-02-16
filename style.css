@@ -7,13 +7,59 @@
 }
 main {
   display: grid;
-  width: 500px;
-  height: 500px;
+  min-width: 500px;
+  min-height: 500px;
   place-self: center;
   box-shadow: 0 0 10px 1px rgb(165, 165, 165);
+  border-radius: 2px;
 }
 body {
   display: grid;
   height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  user-select: none;
+}
+header {
+  display: grid;
+  font-family: "Crafty Girls", cursive;
+  place-content: center;
+  width: 100vw;
+  margin-bottom: 5vh;
+}
+h1,
+button,
+form {
+  margin: auto;
+}
+button,
+input {
+  margin-bottom: 1vh;
+  display: inline-block;
+  width: 100px;
+  font-family: "Roboto Mono", monospace;
+  border-radius: 9999px;
+  border: hidden;
+  box-shadow: 0 0 5px 1px rgb(165, 165, 165);
+  background-color: white;
+  padding: 5px;
+  cursor: pointer;
+}
+input[type="text"] {
+  width: 130px;
+  margin-right: 1vw;
+  margin-top: 1vh;
+}
+button:hover,
+input[type="submit"]:hover {
+  animation-name: gradient;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes gradient {
+  100% {
+    background-color: #fad0c4;
+  }
 }
