@@ -1,4 +1,9 @@
 const main = document.querySelector("main");
+const butonResetare = document.querySelector("button");
+const nrLinii = document.querySelector("#nrLinii");
+const nrColoane = document.querySelector("#nrColoane");
+const formular = document.querySelector("form");
+
 function alegereCuloare() {
   let color =
     "rgb(" +
@@ -37,4 +42,18 @@ function crearePixeli(...arg) {
   }
 }
 
-crearePixeli(10);
+function resetare() {
+  main.childNodes.forEach((e) => (e.style.backgroundColor = "#fff"));
+}
+function actualizarePixeli(e) {
+  e.preventDefault();
+  crearePixeli();
+  if (nrColoane.value != 0) crearePixeli(nrLinii.value, nrColoane.value);
+  else crearePixeli(nrLinii.value);
+  nrLinii.value = null;
+  nrColoane.value = null;
+}
+
+crearePixeli(16);
+formular.addEventListener("submit", actualizarePixeli);
+butonResetare.addEventListener("click", resetare);

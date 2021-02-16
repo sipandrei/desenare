@@ -18,7 +18,7 @@ body {
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Crafty Girls", cursive;
   user-select: none;
 }
 header {
@@ -46,7 +46,7 @@ input {
   padding: 5px;
   cursor: pointer;
 }
-input[type="text"] {
+input[type="number"] {
   width: 130px;
   margin-right: 1vw;
   margin-top: 1vh;
@@ -54,12 +54,12 @@ input[type="text"] {
 button:hover,
 input[type="submit"]:hover {
   animation-name: gradient;
-  animation-duration: 1s;
+  animation-duration: 0.3s;
   animation-fill-mode: both;
 }
 
 @keyframes gradient {
   100% {
-    background-color: #fad0c4;
+    background-color: #ffe8e2;
   }
 }
